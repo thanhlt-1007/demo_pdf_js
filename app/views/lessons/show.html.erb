@@ -17,9 +17,15 @@
       </tr>
       <tr>
         <th>Document</th>
-        <td>
-          <iframe src="<%= @lesson.document.url %>" class="iframe-lesson-document" frameborder="0">
-          </iframe>
+        <td class="text-center">
+          <div class="col-sm-12">
+            <canvas class="canvas-lesson-document js-canvas-fullview-pdf" data-url="<%= @lesson.document.url %>">
+          </div>
+          <div class="col-sm-12">
+            <button class="btn btn-primary btn-pdf-page">Next page</button>
+            <input type="text" class="form-control form-control-pdf-page" value="Trang 1">
+            <button class="btn btn-primary btn-pdf-page">Previous page</button>
+          </div>
         </td>
       </tr>
     </tbody>
