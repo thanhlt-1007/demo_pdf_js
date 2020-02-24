@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Lesson List</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Document</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "lessons/lesson", collection: @lessons %>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p><%= page_entries_info @lessons %></p>
+    </div>
+    <div class="col-sm-6">
+      <%= link_to "Create Lesson", new_lesson_path, class: "btn btn-success pull-right" %>
+    </div>
+  </div>
+
+  <%= paginate @lessons, theme: "twitter-bootstrap-3" %>
+</div>

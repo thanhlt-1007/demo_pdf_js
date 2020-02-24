@@ -1,0 +1,4 @@
+<% %i(name description document).each do |attribute| %>
+  var error = $('.js-error-lesson-<%= attribute %>');
+  error.html('<%= j @lesson.errors.to_hash(true)[attribute]&.first %>');
+<% end %>

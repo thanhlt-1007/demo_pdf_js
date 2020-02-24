@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+20.times do
+  file_names = ["KB_003.pdf", "KB_013.pdf", "KB_055.pdf", "KB_150.pdf", "KB_500.pdf",
+    "MB_001.pdf", "MB_005.pdf", "MB_032.pdf"]
+
+  Lesson.create name: FFaker::Lorem.phrase,
+    description: FFaker::Lorem.phrases.join(" "),
+    document: File.open(Rails.root.join "db/pdfs/#{file_names.sample}")
+end
